@@ -4,7 +4,13 @@ A portfolio project for security engineering, applied AI, and GRC roles. It turn
 
 ## Run locally
 
-On Windows, open this folder in VS Code, open its terminal, and run `powershell -ExecutionPolicy Bypass -File .\start.ps1`. The script validates the saved snapshot and decision log, then opens the local review page. Press Ctrl+C in the terminal to stop the server. Python 3.11 or newer is the only required runtime; the default review workflow uses Python's standard library. Git and GitHub CLI are useful for publishing source code but are not needed to run it. The optional live AI evaluation needs the `openai` package, a configured API key, and a supported model.
+On Windows, run this from any PowerShell prompt:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "C:\Users\MrFrog\Security-Evidence-Workbench\start.ps1"
+```
+
+Or open this folder in VS Code, open its terminal in the project folder, and run `powershell -ExecutionPolicy Bypass -File .\start.ps1`. The script validates the saved snapshot and decision log, then opens the local review page. Press Ctrl+C in the terminal to stop the server. Python 3.11 or newer is the only required runtime; the default review workflow uses Python's standard library. Git and GitHub CLI are useful for publishing source code but are not needed to run it. The optional live AI evaluation needs the `openai` package, a configured API key, and a supported model.
 
 The page is a localhost demonstration with synthetic assets. Do not expose it to the internet or use it as a production vulnerability-management system.
 
