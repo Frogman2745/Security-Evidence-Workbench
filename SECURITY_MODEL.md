@@ -19,7 +19,7 @@
 
 | Threat | Current control | Next check |
 |---|---|---|
-| Untrusted feed text injects HTML | HTML escaping in the local interface | Add a malicious-text rendering test |
+| Untrusted feed text injects HTML | HTML escaping in the local interface | Expand malicious-text rendering tests beyond the current injected script and search string |
 | Cross-site form submission | Random form token | Test missing or incorrect token |
 | Hidden decision edits | SHA-256 linked audit events | Export and independently anchor the final head hash |
 | Wrong asset match | Explicit candidate status, version/configuration review | Add version-aware matching with evidence |

@@ -6,6 +6,8 @@ A portfolio project for security engineering, applied AI, and GRC roles. It turn
 
 The local workspace shows a compact candidate queue, source evidence behind each candidate, status filtering, a focused human decision form, and recent audit events. The screenshot shows a synthetic demonstration state.
 
+For an interview-ready walkthrough, see the [five-minute demo guide](DEMO_GUIDE.md).
+
 ## Run locally
 
 On Windows, run this from any PowerShell prompt:
