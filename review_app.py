@@ -3,7 +3,6 @@
 import argparse
 import csv
 import hashlib
-import html
 import json
 import secrets
 import sqlite3
@@ -14,6 +13,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 from evidence_assistant import answer, load_evidence
+from ui import render_page
 
 ROOT = Path(__file__).resolve().parent
 DB = ROOT / "data" / "reviews.sqlite3"
@@ -115,29 +115,12 @@ class Handler(BaseHTTPRequestHandler):
             self.send_error(404)
             return
         query = parse_qs(url.query).get("q", [""])[0][:200].strip()
-        search_result = answer(query, load_evidence()) if query else None
+        evidence = load_evidence()
+        search_result = answer(query, evidence) if query else None
         with connect() as db:
             candidates = db.execute("SELECT * FROM candidates ORDER BY CASE business_criticality WHEN 'high' THEN 0 ELSE 1 END, date_added DESC, asset_id").fetchall()
             decisions = db.execute("SELECT * FROM decisions ORDER BY id DESC LIMIT 12").fetchall()
-        esc = html.escape
-        parts = ["<!doctype html><html lang='en'><meta charset='utf-8'><title>Security Evidence Workbench</title>",
-                 "<style>body{font:16px system-ui;margin:2rem auto;max-width:1150px;color:#152238;background:#f5f7fb}h1,h2{margin-bottom:.3rem}p{line-height:1.5}.note{background:#fff3d7;padding:1rem;border-left:4px solid #b66a00}table{border-collapse:collapse;width:100%;background:white}th,td{padding:.7rem;border-bottom:1px solid #dce3eb;text-align:left;vertical-align:top}th{background:#e9eff8}form{display:grid;gap:.35rem;min-width:250px}input,select,button{font:inherit;padding:.35rem}button{background:#1766b1;color:white;border:0;cursor:pointer}small{color:#43536a}</style>",
-                 "<h1>Security Evidence Workbench</h1><p class='note'><b>Portfolio demonstration:</b> assets are synthetic. These are product-name matches, not confirmed vulnerable systems. A reviewer must verify installed version, configuration, and remediation evidence. CISA dates are source fields, not deadlines for this fictional organization.</p>",
-                 f"<p>{len(candidates)} review candidates · {len(decisions)} recent decisions · Source: <a href='https://www.cisa.gov/known-exploited-vulnerabilities-catalog'>CISA KEV</a></p>",
-                 "<h2>Evidence search</h2><p>Read-only retrieval from the pinned CISA snapshot and synthetic candidate list. Source text is displayed as data; it cannot approve a finding.</p><form method='get' action='/'><label for='q'>Search a CVE, product, or vulnerability description</label><input id='q' name='q' maxlength='200' placeholder='e.g. SonicWall authentication' value='" + esc(query, quote=True) + "'><button>Search evidence</button></form>"]
-        if search_result:
-            parts.append(f"<p><b>{esc(search_result['answer'])}</b></p>")
-            for item in search_result["results"]:
-                parts.append(f"<p><b>{esc(item['asset_id'])} / {esc(item['cve_id'])}</b> · {esc(item['vendor'])} {esc(item['product'])} · {esc(item['business_criticality'])} criticality<br><small>Source description (untrusted text): {esc(item['description'])}</small><br>CISA added {esc(item['date_added'])}; CISA due-date field {esc(item['cisa_due_date'])}. <a href='{esc(item['source_url'], quote=True)}'>CISA catalog</a> · snapshot SHA-256 {esc(item['source_sha256'][:16])}…</p>")
-            parts.append(f"<p><small>{esc(search_result['limits'])}</small></p>")
-        parts.append("<h2>Review queue</h2><table><tr><th>Asset / CVE</th><th>Context</th><th>Current status</th><th>Human decision</th></tr>")
-        for row in candidates:
-            parts.append(f"<tr><td><b>{esc(row['asset_id'])}</b><br>{esc(row['cve_id'])}</td><td>{esc(row['business_criticality'])} criticality<br>Added {esc(row['date_added'])}<br><small>{esc(row['cisa_required_action'])}</small></td><td>{esc(row['review_status'])}</td><td><form method='post' action='/decide'><input type='hidden' name='token' value='{TOKEN}'><input type='hidden' name='asset_id' value='{esc(row['asset_id'])}'><input type='hidden' name='cve_id' value='{esc(row['cve_id'])}'><select name='status'>{''.join(f'<option>{s}</option>' for s in sorted(STATUSES))}</select><input name='reviewer' placeholder='Reviewer name' maxlength='80' required><input name='rationale' placeholder='Evidence and rationale' maxlength='2000' required><button>Record decision</button></form></td></tr>")
-        parts.append("</table><h2>Recent decision log</h2><table><tr><th>Time (UTC)</th><th>Candidate</th><th>Decision</th><th>Reviewer</th><th>Rationale</th></tr>")
-        for row in decisions:
-            parts.append(f"<tr><td>{esc(row['at_utc'])}</td><td>{esc(row['asset_id'])} / {esc(row['cve_id'])}</td><td>{esc(row['old_status'])} → {esc(row['new_status'])}</td><td>{esc(row['reviewer'])}</td><td>{esc(row['rationale'])}</td></tr>")
-        parts.append("</table><p><small>The SHA-256 audit chain detects changes to local decision records; it is not a substitute for independent storage or access controls.</small></p></html>")
-        body = "".join(parts).encode("utf-8")
+        body = render_page(candidates, decisions, evidence, search_result, query, TOKEN)
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))

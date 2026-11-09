@@ -4,3 +4,5 @@ data/*.sqlite3
 .venv/
 live_eval.json
 Security_Evidence_Workbench_Portfolio.zip
+preview.html
+preview.png

@@ -2,6 +2,10 @@
 
 A portfolio project for security engineering, applied AI, and GRC roles. It turns public vulnerability intelligence into a reviewable decision queue with source citations, integrity checks, human approval, and an audit trail.
 
+![Local analyst review workspace](docs/overview.png)
+
+The local workspace shows a compact candidate queue, source evidence behind each candidate, status filtering, a focused human decision form, and recent audit events. The screenshot shows a synthetic demonstration state.
+
 ## Run locally
 
 On Windows, run this from any PowerShell prompt:

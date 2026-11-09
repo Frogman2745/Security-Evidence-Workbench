@@ -12,7 +12,7 @@ This evaluation uses a simulated model provider against the pinned CISA snapshot
 | Simulated model says evidence is insufficient | Return an insufficient-evidence response |
 | Retrieval has no matching candidate | Return insufficient evidence without calling a model |
 
-Run `python -m unittest discover -v` and `python test_review_app.py`. The current suite has ten discoverable tests plus the separate decision-log check. A live model, its exact model/version, costs, response logs, and labeled relevance scores are not part of this result. Exact-quote validation limits unsupported text but cannot by itself prove a quote is relevant to the question or that a source statement applies to a particular installed version.
+Run `python -m unittest discover -v` and `python test_review_app.py`. The current suite has eleven discoverable tests plus the separate decision-log check. A live model, its exact model/version, costs, response logs, and labeled relevance scores are not part of this result. Exact-quote validation limits unsupported text but cannot by itself prove a quote is relevant to the question or that a source statement applies to a particular installed version.
 
 ## Fixed question set
 
