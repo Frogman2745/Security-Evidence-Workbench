@@ -1,0 +1,5 @@
+asset_id,vendor,product,business_criticality,owner,inventory_note
+LAB-001,SonicWall,SonicOS SSLVPN,high,Network Lab,Synthetic inventory; version and configuration unverified
+LAB-002,Ivanti,Connect Secure,high,Remote Access Lab,Synthetic inventory; version and configuration unverified
+LAB-003,WordPress,WordPress Core,medium,Web Lab,Synthetic inventory; version and configuration unverified
+LAB-004,GitLab,Community Edition and Enterprise Edition,medium,Dev Lab,Synthetic inventory; edition and version unverified

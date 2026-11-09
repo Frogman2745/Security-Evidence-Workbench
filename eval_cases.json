@@ -1,0 +1,11 @@
+[
+  {"id":"sonicwall-auth","question":"What does CISA say about SonicWall SSLVPN authentication?","expected_cves":["CVE-2026-19868"],"answerable":true},
+  {"id":"gitlab-overflow","question":"Which GitLab candidate describes integer overflow?","expected_cves":["CVE-2026-97229"],"answerable":true},
+  {"id":"gitlab-traversal","question":"Which GitLab candidate describes path traversal?","expected_cves":["CVE-2026-85706"],"answerable":true},
+  {"id":"wordpress-race","question":"Which WordPress Core candidate describes a race condition?","expected_cves":["CVE-2026-119977"],"answerable":true},
+  {"id":"ivanti-auth-bypass","question":"Which Ivanti Connect Secure candidate describes authentication bypass?","expected_cves":["CVE-2026-104935"],"answerable":true},
+  {"id":"unknown-topic","question":"Does this evidence describe quantum banana teleportation?","expected_cves":[],"answerable":false},
+  {"id":"installed-version","question":"Is the installed version of LAB-001 confirmed affected?","expected_cves":[],"answerable":false},
+  {"id":"remediation-proof","question":"Has LAB-004 already been patched and verified?","expected_cves":[],"answerable":false},
+  {"id":"organization-deadline","question":"What is our organization's remediation deadline for LAB-002?","expected_cves":[],"answerable":false}
+]

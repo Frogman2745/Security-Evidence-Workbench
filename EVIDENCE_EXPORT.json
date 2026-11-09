@@ -1,0 +1,141 @@
+{
+  "exported_at_utc": "2026-11-08T21:54:19.878544+00:00",
+  "scope": "Local portfolio demonstration; synthetic asset inventory; product-name candidates only",
+  "source": {
+    "name": "CISA Known Exploited Vulnerabilities",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+    "catalog_version": "2026.11.06",
+    "date_released": "2026-11-06T19:44:45.1797Z",
+    "entries": 1769,
+    "sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2"
+  },
+  "assertions": {
+    "asset_count": 4,
+    "candidate_count": 7,
+    "decision_count": 0,
+    "decision_chain_valid": true,
+    "candidate_source_hashes_match": true,
+    "installed_versions_verified": false,
+    "real_world_vulnerability_findings": false
+  },
+  "synthetic_assets": [
+    {
+      "asset_id": "LAB-001",
+      "vendor": "SonicWall",
+      "product": "SonicOS SSLVPN",
+      "business_criticality": "high",
+      "owner": "Network Lab",
+      "inventory_note": "Synthetic inventory; version and configuration unverified"
+    },
+    {
+      "asset_id": "LAB-002",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "business_criticality": "high",
+      "owner": "Remote Access Lab",
+      "inventory_note": "Synthetic inventory; version and configuration unverified"
+    },
+    {
+      "asset_id": "LAB-003",
+      "vendor": "WordPress",
+      "product": "WordPress Core",
+      "business_criticality": "medium",
+      "owner": "Web Lab",
+      "inventory_note": "Synthetic inventory; version and configuration unverified"
+    },
+    {
+      "asset_id": "LAB-004",
+      "vendor": "GitLab",
+      "product": "Community Edition and Enterprise Edition",
+      "business_criticality": "medium",
+      "owner": "Dev Lab",
+      "inventory_note": "Synthetic inventory; edition and version unverified"
+    }
+  ],
+  "review_candidates": [
+    {
+      "asset_id": "LAB-001",
+      "cve_id": "CVE-2026-19868",
+      "business_criticality": "high",
+      "date_added": "2026-11-06",
+      "cisa_due_date": "2026-11-20",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-002",
+      "cve_id": "CVE-2026-104935",
+      "business_criticality": "high",
+      "date_added": "2026-10-13",
+      "cisa_due_date": "2026-10-16",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-002",
+      "cve_id": "CVE-2026-111357",
+      "business_criticality": "high",
+      "date_added": "2026-10-30",
+      "cisa_due_date": "2026-11-02",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-002",
+      "cve_id": "CVE-2026-118527",
+      "business_criticality": "high",
+      "date_added": "2026-10-30",
+      "cisa_due_date": "2026-11-13",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-003",
+      "cve_id": "CVE-2026-119977",
+      "business_criticality": "medium",
+      "date_added": "2026-11-03",
+      "cisa_due_date": "2026-11-06",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-004",
+      "cve_id": "CVE-2026-85706",
+      "business_criticality": "medium",
+      "date_added": "2026-09-11",
+      "cisa_due_date": "2026-09-14",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    },
+    {
+      "asset_id": "LAB-004",
+      "cve_id": "CVE-2026-97229",
+      "business_criticality": "medium",
+      "date_added": "2026-10-29",
+      "cisa_due_date": "2026-11-01",
+      "cisa_required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "evidence_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "source_sha256": "47e0406b2be5a40420eff66f3d90e83eb8883dae6ff4d08e1b2a942c366f6cc2",
+      "review_status": "NEEDS_VERSION_AND_CONFIGURATION_REVIEW"
+    }
+  ],
+  "decision_events": [],
+  "decision_chain_head": "GENESIS",
+  "limitations": [
+    "Reviewer names are unverified attribution text; no authentication is implemented.",
+    "A local hash chain cannot prevent an attacker with database access from rewriting and recomputing the entire chain; anchor the exported hash externally for stronger evidence.",
+    "CISA due dates are catalog source fields, not deadlines for the fictional organization."
+  ]
+}

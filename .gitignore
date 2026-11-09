@@ -1,0 +1,6 @@
+__pycache__/
+data/*.sqlite3
+*.pyc
+.venv/
+live_eval.json
+Security_Evidence_Workbench_Portfolio.zip

@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "mode": "retrieval",
+    "source": "pinned CISA snapshot plus synthetic lab assets",
+    "case_count": 9,
+    "answerable_count": 5,
+    "unanswerable_count": 4,
+    "retrieval_recall_at_5": 1.0
+  },
+  "cases": [
+    {
+      "id": "sonicwall-auth",
+      "answerable": true,
+      "expected_cves": [
+        "CVE-2026-19868"
+      ],
+      "retrieved_cves": [
+        "CVE-2026-104935",
+        "CVE-2026-111357",
+        "CVE-2026-19868",
+        "CVE-2026-85706"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "id": "gitlab-overflow",
+      "answerable": true,
+      "expected_cves": [
+        "CVE-2026-97229"
+      ],
+      "retrieved_cves": [
+        "CVE-2026-85706",
+        "CVE-2026-97229"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "id": "gitlab-traversal",
+      "answerable": true,
+      "expected_cves": [
+        "CVE-2026-85706"
+      ],
+      "retrieved_cves": [
+        "CVE-2026-85706",
+        "CVE-2026-97229"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "id": "wordpress-race",
+      "answerable": true,
+      "expected_cves": [
+        "CVE-2026-119977"
+      ],
+      "retrieved_cves": [
+        "CVE-2026-111357",
+        "CVE-2026-118527",
+        "CVE-2026-119977",
+        "CVE-2026-19868",
+        "CVE-2026-97229"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "id": "ivanti-auth-bypass",
+      "answerable": true,
+      "expected_cves": [
+        "CVE-2026-104935"
+      ],
+      "retrieved_cves": [
+        "CVE-2026-104935",
+        "CVE-2026-111357",
+        "CVE-2026-118527",
+        "CVE-2026-19868",
+        "CVE-2026-85706"
+      ],
+      "retrieval_hit": true
+    },
+    {
+      "id": "unknown-topic",
+      "answerable": false,
+      "expected_cves": [],
+      "retrieved_cves": [
+        "CVE-2026-111357",
+        "CVE-2026-118527",
+        "CVE-2026-119977"
+      ],
+      "retrieval_hit": null
+    },
+    {
+      "id": "installed-version",
+      "answerable": false,
+      "expected_cves": [],
+      "retrieved_cves": [
+        "CVE-2026-118527",
+        "CVE-2026-119977",
+        "CVE-2026-19868",
+        "CVE-2026-85706",
+        "CVE-2026-97229"
+      ],
+      "retrieval_hit": null
+    },
+    {
+      "id": "remediation-proof",
+      "answerable": false,
+      "expected_cves": [],
+      "retrieved_cves": [
+        "CVE-2026-111357",
+        "CVE-2026-118527",
+        "CVE-2026-85706",
+        "CVE-2026-97229"
+      ],
+      "retrieval_hit": null
+    },
+    {
+      "id": "organization-deadline",
+      "answerable": false,
+      "expected_cves": [],
+      "retrieved_cves": [
+        "CVE-2026-104935",
+        "CVE-2026-111357",
+        "CVE-2026-118527",
+        "CVE-2026-119977",
+        "CVE-2026-19868"
+      ],
+      "retrieval_hit": null
+    }
+  ]
+}
